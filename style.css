@@ -1,0 +1,723 @@
+body { margin: 0; font-family: sans-serif; overflow-x:hidden; }
+
+#myPic, #gradPic { 
+  width: 87vh; 
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+#myPic.active, #gradPic.active { 
+  opacity: 1; 
+  transform: translateX(0); 
+  z-index: 2; 
+}
+#gradPic.exit-left {
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.justify-text { text-align: justify; }
+.about_me_indent { text-indent: 5rem; }
+
+.paragraph-area { position: relative; min-height: 100%; }
+.text-set {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  pointer-events: none;
+}
+.text-set.active {
+  opacity: 1;
+  transform: translateX(0);
+  position: relative;
+  pointer-events: auto;
+}
+#set3.exit-right {
+  opacity: 0;
+  transform: translateX(100px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+#about_me {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 1;
+  overflow-y: hidden;
+  padding-top: 80px;
+}
+
+#education {
+  position: relative;
+  z-index: -1;
+  margin-top: 100vh;
+  background: white;
+  padding-bottom: 500px;
+}
+
+#certifications {
+  position: relative;
+  z-index: 2;
+  margin-top: 100vh;
+  background: white;
+}
+
+.navbar { z-index: 3; }
+
+#nav {
+  z-index: 10;
+  background: #3a6186;
+  background: -webkit-linear-gradient(to left, #360033, #0b8793);
+  background: linear-gradient(to left, #360033, #0b8793);
+  overflow: hidden;
+}
+
+#nav::before,
+#nav::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 20px;
+  pointer-events: none;
+  z-index: 3;
+}
+
+#nav::before {
+  top: 0;
+  background: linear-gradient(to bottom, 
+              rgba(58, 97, 134, 1) 0%, 
+              rgba(58, 97, 134, 0.8) 40%,
+              rgba(58, 97, 134, 0.4) 70%,
+              rgba(58, 97, 134, 0) 100%);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+
+#nav::after {
+  bottom: 0;
+  background: linear-gradient(to top, 
+              rgba(58, 97, 134, 1) 0%, 
+              rgba(58, 97, 134, 0.8) 40%,
+              rgba(58, 97, 134, 0.4) 70%,
+              rgba(58, 97, 134, 0) 100%);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+
+.sticky { position: static; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-12px) scale(1.02); }
+}
+
+.card {
+  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border-radius: 0.75rem;
+  overflow: hidden;
+  transform: scale(0.98);
+  cursor: pointer;
+  height: 100%;
+}
+.card:hover, .card.card--active {
+  animation: float 1s ease-in-out infinite;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15), 0 5px 15px rgba(0, 0, 0, 0.1) !important;
+}
+
+.card-img-top {
+  height: 4rem;
+  object-fit: cover;
+  transition: all 0.5s ease;
+}
+.card:hover .card-img-top, .card.card--active .card-img-top {
+  filter: blur(3px) brightness(70%);
+  transform: scale(1.05);
+}
+
+.overlay-text {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.9);
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  pointer-events: none;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+  z-index: 10;
+}
+.card:hover .overlay-text, .card.card--active .overlay-text {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  height: 100%;
+}
+.card-link:hover { color: inherit; }
+.card-body { pointer-events: none; }
+.card-title, .card-text { pointer-events: auto; }
+.js-float-card { position: relative; height: 100%; }
+
+#set3 .card { 
+  opacity: 1; 
+  transform: none; 
+  pointer-events: auto;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+#set3 .row.justify-content-center { margin: 0 auto; justify-content: center !important; }
+#set3 .container { padding: 0; }
+#set3 .col-5 { padding: 0 10px; }
+
+/* Disable achievement cards when education section is not visible */
+#set3:not(.active) .card-link {
+  pointer-events: none;
+  cursor: default;
+}
+#set3:not(.active) .card {
+  filter: grayscale(80%);
+  opacity: 0.7;
+}
+
+body.modal-open { overflow: auto !important; padding-right: 0 !important; }
+.modal { padding-right: 0 !important; }
+
+@media (prefers-reduced-motion: reduce) {
+  .card, .card:hover, .card.card--active,
+  .card-img-top, .overlay-text {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+    filter: none !important;
+  }
+}
+
+.tooltip-inner {
+  max-width: 300px;   /* make wider so it wraps at a good point */
+  font-size: 0.9rem;  /* adjust size */
+  text-align: left;   /* align neatly */
+  line-height: 1.4;   /* improve readability */
+  padding: 12px 16px; /* adds "margins inside" */
+  white-space: normal; /* allows wrapping instead of one line */
+}
+
+
+.cosmic-aurora {
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  background-color: #0a0a0a; /* base background */
+  background-image: 
+    radial-gradient(ellipse at 20% 30%, rgba(56, 189, 248, 0.4) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 70%, rgba(139, 92, 246, 0.3) 0%, transparent 70%),
+    radial-gradient(ellipse at 60% 20%, rgba(236, 72, 153, 0.25) 0%, transparent 50%),
+    radial-gradient(ellipse at 40% 80%, rgba(34, 197, 94, 0.2) 0%, transparent 65%);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Certifications animations */
+.certifications-intro h2,
+.certifications-intro h3 {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.cert-intro-element.animate-in {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.cert-intro-element.animate-out {
+  opacity: 0 !important;
+  transform: translateY(-30px) !important;
+}
+
+/* Category heading animations */
+.cert-category-title {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.cert-category-title.animate-in {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.cert-category-title.animate-out {
+  opacity: 0 !important;
+  transform: translateY(-40px) !important;
+}
+
+.cert-row {
+  opacity: 1;
+  transition: opacity 0.8s ease;
+}
+
+.cert-card {
+  opacity: 0;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Animation classes for cards */
+.cert-card.animate-in-left {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+
+.cert-card.animate-out-right {
+  opacity: 0 !important;
+  transform: translateX(100px) !important;
+}
+
+.cert-card.animate-in-right {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+
+.cert-card.animate-out-left {
+  opacity: 0 !important;
+  transform: translateX(-100px) !important;
+}
+
+.cert-card.animate-in-bottom {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.cert-card.animate-out-top {
+  opacity: 0 !important;
+  transform: translateY(-100px) !important;
+}
+
+/* Initial states for different animations */
+.cert-card.initial-left {
+  transform: translateX(-100px);
+}
+
+.cert-card.initial-right {
+  transform: translateX(100px);
+}
+
+.cert-card.initial-bottom {
+  transform: translateY(100px);
+}
+
+/* Make sure cards are visible when animated in */
+.cert-card.animate-in-left,
+.cert-card.animate-in-right,
+.cert-card.animate-in-bottom {
+  opacity: 1 !important;
+}
+
+
+/* Add this to your CSS */
+.name-title {
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.name-title.exit-right {
+  opacity: 0;
+  transform: translateX(100px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* Ensure category titles and cards exit simultaneously */
+.cert-row.exiting .cert-category-title,
+.cert-row.exiting .cert-card {
+  transition: opacity 0.6s ease, transform 0.6s ease !important;
+  transition-delay: 0s !important;
+}
+
+
+/* Normal scrolling sections */
+#tools, #projects, #contact {
+  position: relative;
+  z-index: 2;
+  background: white;
+  padding: 100px 0;
+}
+
+/* Remove the fixed height from certifications */
+#certifications {
+  position: relative;
+  z-index: 2;
+  background: white;
+  padding: 100px 0;
+}
+
+/* Update the education section */
+#education {
+  position: relative;
+  z-index: -1;
+  margin-top: 100vh;
+  background: white;
+  padding-bottom: 100px; /* Reduced from 500px */
+}
+
+
+#tech-stacks {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  color: #fff;
+}
+
+#tech-stacks .ts-container {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  /*max-width: 900px;*/
+  background: #232345;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+}
+
+/* Tabs */
+#tech-stacks .ts-tabs {
+  display: flex;
+  background: rgba(255,255,255,0.08);
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+}
+#tech-stacks .ts-tab {
+  flex: 1;
+  padding: 0.8rem 1.2rem;
+  cursor: pointer;
+  text-align: center;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+#tech-stacks .ts-tab:hover {
+  background: rgba(255,255,255,0.12);
+}
+#tech-stacks .ts-tab.active {
+  background: rgba(255,255,255,0.2);
+}
+
+/* Content */
+#tech-stacks .ts-content-wrapper {
+  overflow: hidden;
+  transition: height 0.5s ease;
+}
+#tech-stacks .ts-stack-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 1rem;
+  padding: 1.5rem;
+}
+
+/* Cards */
+#tech-stacks .ts-stack-card {
+  background: rgba(255,255,255,0.08);
+  border-radius: 0.75rem;
+  padding: 1rem;
+  text-align: center;
+  border: 2px solid transparent;
+  transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+  opacity: 0;
+  transform: translateY(20px);
+}
+#tech-stacks .ts-stack-card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+#tech-stacks .ts-stack-card img {
+  width: 50px;
+  margin-bottom: 0.5rem;
+}
+#tech-stacks .ts-stack-card p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+#tech-stacks .ts-stack-card:hover {
+  transform: scale(1.05);
+  border-color: #00e6ff;
+  box-shadow: 0 0 12px #00e6ff, 0 0 24px rgba(0, 230, 255, 0.6);
+}
+
+#tools {
+  position: relative;
+  z-index: 2;
+  background: #3a6186;
+  background: -webkit-linear-gradient(to right, #360033, #0b8793);
+  background: linear-gradient(to right, #360033, #0b8793);
+  padding: 100px 0;
+  /* Add these for the blur effect */
+  overflow: hidden;
+}
+
+#tools::before,
+#tools::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 20px;
+  pointer-events: none;
+  z-index: 3;
+}
+
+#tools::before {
+  top: 0;
+  background: linear-gradient(to bottom, 
+              rgba(58, 97, 134, 1) 0%, 
+              rgba(58, 97, 134, 0.8) 40%,
+              rgba(58, 97, 134, 0.4) 70%,
+              rgba(58, 97, 134, 0) 100%);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+
+#tools::after {
+  bottom: 0;
+  background: linear-gradient(to top, 
+              rgba(58, 97, 134, 1) 0%, 
+              rgba(58, 97, 134, 0.8) 40%,
+              rgba(58, 97, 134, 0.4) 70%,
+              rgba(58, 97, 134, 0) 100%);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+
+
+/* Projects animations - same as certifications */
+.projects-intro h2,
+.projects-intro h3 {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.proj-intro-element.animate-in {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.proj-intro-element.animate-out {
+  opacity: 0 !important;
+  transform: translateY(-30px) !important;
+}
+
+.proj-row {
+  opacity: 1;
+  transition: opacity 0.8s ease;
+}
+
+.proj-card {
+  opacity: 0;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Animation classes for project cards */
+.proj-card.animate-in-left {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+
+.proj-card.animate-out-right {
+  opacity: 0 !important;
+  transform: translateX(100px) !important;
+}
+
+.proj-card.animate-in-right {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+
+.proj-card.animate-out-left {
+  opacity: 0 !important;
+  transform: translateX(-100px) !important;
+}
+
+.proj-card.animate-in-bottom {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.proj-card.animate-out-top {
+  opacity: 0 !important;
+  transform: translateY(-100px) !important;
+}
+
+/* Initial states for different animations */
+.proj-card.initial-left {
+  transform: translateX(-100px);
+}
+
+.proj-card.initial-right {
+  transform: translateX(100px);
+}
+
+.proj-card.initial-bottom {
+  transform: translateY(100px);
+}
+
+/* Make sure project cards are visible when animated in */
+.proj-card.animate-in-left,
+.proj-card.animate-in-right,
+.proj-card.animate-in-bottom {
+  opacity: 1 !important;
+}
+
+/* Stack icons in modal */
+.stack-icon {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  margin-right: 8px;
+  margin-bottom: 8px;
+}
+
+
+
+
+#contact {
+  position: relative;
+  z-index: 2;
+  background: #3a6186;
+  background: -webkit-linear-gradient(to left, #360033, #0b8793);
+  background: linear-gradient(to left, #360033, #0b8793);
+  padding: 100px 0;
+  /* Add these for the blur effect */
+  overflow: hidden;
+}
+
+#contact::before,
+#contact::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 20px;
+  pointer-events: none;
+  z-index: 3;
+}
+
+#contact::before {
+  top: 0;
+  background: linear-gradient(to bottom, 
+              rgba(58, 97, 134, 1) 0%, 
+              rgba(58, 97, 134, 0.8) 40%,
+              rgba(58, 97, 134, 0.4) 70%,
+              rgba(58, 97, 134, 0) 100%);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+
+#contact::after {
+  bottom: 0;
+  background: linear-gradient(to top, 
+              rgba(58, 97, 134, 1) 0%, 
+              rgba(58, 97, 134, 0.8) 40%,
+              rgba(58, 97, 134, 0.4) 70%,
+              rgba(58, 97, 134, 0) 100%);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+
+/* Contact/Footer Section Styles */
+#contact {
+  position: relative;
+  z-index: 2;
+  background: #3a6186;
+  background: -webkit-linear-gradient(to left, #360033, #0b8793);
+  background: linear-gradient(to left, #360033, #0b8793);
+  padding: 100px 0 30px;
+  overflow: hidden;
+}
+
+#contact::before,
+#contact::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 20px;
+  pointer-events: none;
+  z-index: 3;
+}
+
+#contact::before {
+  top: 0;
+  background: linear-gradient(to bottom, 
+              rgba(58, 97, 134, 1) 0%, 
+              rgba(58, 97, 134, 0.8) 40%,
+              rgba(58, 97, 134, 0.4) 70%,
+              rgba(58, 97, 134, 0) 100%);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+
+#contact::after {
+  bottom: 0;
+  background: linear-gradient(to top, 
+              rgba(58, 97, 134, 1) 0%, 
+              rgba(58, 97, 134, 0.8) 40%,
+              rgba(58, 97, 134, 0.4) 70%,
+              rgba(58, 97, 134, 0) 100%);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+
+/* Social Links */
+.social-link {
+  color: rgba(255, 255, 255, 0.7);
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.social-link:hover {
+  color: #fff;
+  transform: translateY(-5px);
+}
+
+/* Download Button */
+.download-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: white;
+  padding: 12px 30px;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.download-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  color: white;
+}
+
+/* Footer specific styles */
+#contact .border-top {
+  border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+#contact .text-muted {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
