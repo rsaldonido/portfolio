@@ -1238,9 +1238,11 @@ body.modal-open {
   .text_size {
     font-size: 20px;
   }
-  #myPic, #gradPic {
-    width: 25vh;
+
+  #myPic{
+    width: 30vw;
   }
+
   #ietiLogo {
     width: 50%;
   }
@@ -1257,8 +1259,10 @@ body.modal-open {
 
 @media (min-width: 992px) {
   .text_size {
-    font-size: 18px;
+    font-size: 15px;
   }
+
+
   #ietiLogo {
     width: 40%;
   }
@@ -1281,10 +1285,11 @@ body.modal-open {
 
 @media (min-width: 1200px) {
   .text_size {
-    font-size: 25px;
+    font-size: 1.3rem;
   }
-  #myPic, #gradPic {
-    width: 75%;
+
+  #myPic{
+    width: 30vw;
   }
 
   .y-expander{
@@ -1309,3 +1314,90 @@ body.modal-open {
 }
 /* Media Queries (Responsiveness) End */
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Navigation Link Highlight Styling Start */
+.navbar-nav .nav-link,
+.mobile_menu .nav-link {
+  position: relative;
+  color: white !important;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+}
+
+/* Hover effect (same as email) */
+.navbar-nav .nav-link:hover,
+.mobile_menu .nav-link:hover {
+  color: #00ffff !important;
+  text-shadow: 0 0 3px #00ffff, 0 0 6px #00bbbb;
+  transform: translateY(-2px);
+}
+
+/* Underline animation on hover */
+.navbar-nav .nav-link::after,
+.mobile_menu .nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  background: linear-gradient(to right, #00ffff, #0b8793);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.navbar-nav .nav-link:hover::after,
+.mobile_menu .nav-link:hover::after {
+  width: 80%;
+}
+
+/* Email link styling to match */
+.social-icon[href^="mailto"] {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.social-icon[href^="mailto"]:hover {
+  transform: translateY(-2px);
+}
+
+/* Contact section email styling */
+#contact .social-icon[href^="mailto"] {
+  position: relative;
+}
+
+#contact .social-icon[href^="mailto"]::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 50%;
+  background: linear-gradient(to right, #00ffff, #0b8793);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+#contact .social-icon[href^="mailto"]:hover::after {
+  width: 100%;
+}
+/* Navigation Link Highlight Styling End */

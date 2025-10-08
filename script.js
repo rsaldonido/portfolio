@@ -1,3 +1,23 @@
+// Force scroll to top on page load/refresh
+window.addEventListener('load', function() {
+  // Scroll to top immediately
+  window.scrollTo(0, 0);
+  
+  // Additional measure for browsers that might restore scroll position
+  if (history.scrollRestoration) {
+    history.scrollRestoration = 'manual';
+  }
+});
+
+// Scroll to top when the page is shown (For situations when the "back" button is used and the like)
+window.addEventListener('pageshow', function(event) {
+  if (event.persisted) {
+    window.scrollTo(0, 0);
+  }
+});
+
+
+
 // Mobile Menu Function Start
 const menuBtn = document.getElementById("menu_btn");
 const mobileMenu = document.getElementById("mobile_menu");
@@ -32,6 +52,8 @@ navLinks.forEach(link => {
 
 overlay.addEventListener("click", closeMenu);
 // Mobile Menu Function End
+
+
 
 
 
@@ -969,6 +991,8 @@ function initContactAnimations() {
   setTimeout(handleContactAnimations, 100);
 }
 // Contact Section Animation Functionality End
+
+
 
 
 
