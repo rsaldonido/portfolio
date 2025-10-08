@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="./style.css">
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <title>Randolf Saldonido | Full Stack Developer</title>
+  </head>
+  <body class="bg_design_two">
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg navbar-light fs-4 px-3 px-lg-5 fixed-top bg_design_one bg_design_border" id="nav">
+      <div class="container-fluid">
+        <!-- Logo -->
+        <a class="navbar-brand fs-4 text-white" href="#">RAM</a>
+
+        <!-- Custom hamburger button -->
+        <button class="navbar-toggler border-0" id="menu_btn" type="button">
+          <span class="hamburger"></span>
+        </button>
+
+        <!-- Desktop Nav Links (hidden on small screens via Bootstrap classes) -->
+        <div class="collapse navbar-collapse d-none d-lg-block">
+          <div class="navbar-nav ms-auto">
+            <a class="nav-link mx-2 text-white" href="#">Home</a>
+            <a class="nav-link mx-2 text-white" href="#education">Education</a>
+            <a class="nav-link mx-2 text-white" href="#certifications">Certifications</a>
+            <a class="nav-link mx-2 text-white" href="#tools">Tools</a>
+            <a class="nav-link mx-2 text-white" href="#projects">Projects</a>
+            <a class="nav-link mx-2 text-white" href="#">Contact</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Background overlay (hidden by default) -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Mobile Mini Menu (hidden by default, shown with JS) -->
+    <div class="mobile_menu" id="mobile_menu">
+      <a class="nav-link text-white" href="#">Home</a>
+      <a class="nav-link text-white" href="#education">Education</a>
+      <a class="nav-link text-white" href="#certifications">Certifications</a>
+      <a class="nav-link text-white" href="#tools">Tools</a>
+      <a class="nav-link text-white" href="#projects">Projects</a>
+      <a class="nav-link text-white" href="#contact">Contact</a>
+    </div>
+    <!-- Navbar End -->
+
+    <!-- About Me Start -->
+    <section class="container-fluid text-white" id="about_me">
+      <div class="row y-expander center-content">
+
+        <!-- Left: Picture -->
+        <div class="col-12 col-xl-6 text-center fade-in-left justify-content-center">
+          <img src="./images/myPic.png" alt="Randolf Saldonido" class="img-fluid" id="myPic">
+        </div>
+
+        <!-- Right: Name / Role + Description -->
+        <div class="col-12 col-xl-6 text-center">
+          
+          <!-- Name + Location -->
+          <div class="fade-in-right mb-3 text-center">
+            <h1>Randolf "Ram" Saldonido</h1>
+            <h4>
+              <svg class="icon_size align-top" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                <path fill="#ffffff" d="M128 252.6C128 148.4 214 64 320 64C426 64 512 148.4 512 252.6C512 371.9 391.8 514.9 341.6 569.4C329.8 582.2 310.1 582.2 298.3 569.4C248.1 514.9 127.9 371.9 127.9 252.6zM320 320C355.3 320 384 291.3 384 256C384 220.7 355.3 192 320 192C284.7 192 256 220.7 256 256C256 291.3 284.7 320 320 320z"/>
+              </svg>
+              Parañaque City, NCR, Philippines
+            </h4>
+          </div>
+
+          <!-- Social Media + Resume -->
+          <div class="d-flex justify-content-center align-items-center text-center flex-wrap my-3 fade-in-right">
+            <div class="me-3">
+              <a href="https://facebook.com/yourprofile" target="_blank" class="social-icon mx-2">
+                <i class="fab fa-facebook fa-2x"></i>
+              </a>
+              <a href="https://linkedin.com/in/yourprofile" target="_blank" class="social-icon mx-2">
+                <i class="fab fa-linkedin fa-2x"></i>
+              </a>
+              <a href="mailto:randolfsaldonido@gmail.com" class="social-icon mx-2">
+                <i class="fab fa-google fa-2x"></i>
+              </a>
+            </div>
+            <div>
+              <a href="./Saldonido_Randolf_Resume.pdf" download class="btn btn-primary resume-btn">
+                <i class="fas fa-download me-2"></i>Download Resume
+              </a>
+            </div>
+          </div>
+
+          <!-- Role + Description -->
+          <div class="role-section text-md-start fade-in-right">
+            <!-- Full Stack Developer (default visible) -->
+            <div class="role fade-role active text-center" id="role1">
+              <h2>Full Stack Developer</h2>
+              <h4 class="mb-3">Turning Ideas to Reality</h4>
+              <p class="text_size text_indent justify-text mb-0">
+                As a Full Stack Developer, I focus on creating scalable, high-performance web applications that work smoothly across devices. I work confidently on both the front end and back end using modern frameworks, databases, and cloud solutions to bring ideas to life. I've designed responsive interfaces, built secure APIs, and optimized systems to meet business needs while keeping performance in mind. I take pride in writing clean, maintainable code and enjoy tackling complex problems with practical solutions. I value collaboration, continuous learning, and staying adaptable to new technologies so the projects I build remain impactful and future-ready.
+              </p>
+            </div>
+
+            <!-- IT Service Desk (hidden, fades in after scroll) -->
+            <div class="role fade-role text-center" id="role2">
+              <h2>Former IT Service Desk (L1, L2, SME, QA, and Trainer)</h2>
+              <h4 class="mb-3">Providing Solutions Since 2011</h4>
+              <p class="text_size text_indent justify-text mb-0">
+                With over a decade in IT helpdesk, backed by ITIL certification and experience as a Process Coach and Quality Assurance Analyst, I've honed skills in process improvement, service quality, and team training to drive customer satisfaction. Now transitioning into Full Stack Development, I leverage this strong IT foundation to build scalable, user-focused applications with clean, reliable code. Combining analytical problem-solving with a passion for innovation, I aim to bridge my IT expertise and development skills to deliver impactful, future-ready solutions.
+              </p>
+            </div>
+
+            <div class="role fade-role text-center" id="role3">
+              <h2>Education</h2>
+              <h3 class="mb-3">International Electronics and Technical Insititute</h3>
+              
+              <div class="container-fluid text-center">
+                <div class="row">
+                  <div class="col-4 col-md-5 text-center text-md-end">
+                    <img class="img-fluid" src="./images/ietiLogo.png" id="ietiLogo">
+                  </div>
+                  <div class="col-8 col-md-7 d-flex flex-column align-items-start justify-content-center font_adjust">
+                    <p class="mb-0">Bachelor of Science in</p>
+                    <p>Information Technology</p>
+                    <p class="pt-0">
+                      May 2006 to May 2011
+                      <span class="ms-1 align-middle"
+                            data-bs-toggle="tooltip"
+                            title="It's a 4-year course but I paused on my 2nd year due to financial hardships. I worked as a service crew and completed my degree the next year after saving enough money.">
+                        ℹ️
+                      </span>
+                    </p>
+                  </div>
+
+                  <!-- Education Start -->
+                  <div class="col-12 col-md-12 p-0">
+                    <h5 class="mb-2">Achievements</h5>
+
+                    <!-- Award Cards Container Start-->
+                    <div class="container-fluid">
+                      <div class="row justify-content-center flex-nowrap">
+                        <!-- Card 1 -->
+                        <div class="col-auto">
+                          <a href="#" class="card-link" data-bs-toggle="modal" data-bs-target="#universalModal" data-image-src="./images/img1.png">
+                            <div class="card position-relative js-float-card pb-0">
+                              <img src="./images/img1.png" class="card-img-top" alt="Best Project Development Award">
+                              <div class="overlay-text">View</div>
+                              <div class="card-body text-center text-dark">
+                                <h5 class="card-title">Best Project Development</h5>
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div class="col-auto">
+                          <a href="#" class="card-link" data-bs-toggle="modal" data-bs-target="#universalModal" data-image-src="./images/img2.png">
+                            <div class="card position-relative js-float-card pb-0">
+                              <img src="./images/img2.png" class="card-img-top" alt="Best Web Developer Award">
+                              <div class="overlay-text">View</div>
+                              <div class="card-body text-center text-dark">
+                                <h5 class="card-title">Best Web Developer</h5>
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Award Cards Container End-->
+                  </div>
+                  <!-- Education End -->
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- About Me End -->
+
+    <section class="spacer text-white">
+      <p>spacer</p>
+    </section>
+
+    <!-- Education Spacer Start -->
+    <section class="behind_about">
+      <section class="text-center" id="education">
+      </section>
+    </section>
+    <!-- Education Spacer End -->
+
+    <section class="spacer text-white">
+    </section>
+
+    <!-- Certifications Start -->
+    <section class="container-fluid above_about text-center text-white certifications" id="certifications">
+      <!-- Certifications Intro Start -->
+      <div>
+        <h2 class="cert-intro-element">Certifications</h2>
+        <h3 class="cert-intro-element">I'm always eager to improve myself through upskilling.</h3>
+        <h3 class="cert-intro-element">This helps me to bridge gaps, innovate solutions, and prepare myself for future opportunities that demand adaptability and growth.</h3>
+      </div>
+      <!-- Certifications Intro End -->
+
+      <!-- Certifications Cards Start -->
+
+      <!-- Full Stack Certificates Start -->
+      <!-- Full Stack Certificate Set 1 Start -->
+      <div class="container">
+        <div class="row justify-content-center">
+          <h3 class="pt-5">Full Stack Development</h3>
+          <!-- Certificate Card 1 -->
+          <div class="col-6 col-sm-6 col-lg-3 mb-4 d-flex justify-content-center">
+            <a href="#" class="card-link" data-bs-toggle="modal" data-bs-target="#universalModal" data-image-src="./images/img3.png">
+              <div class="card position-relative js-float-card">
+                <img src="./images/img3.png" class="card-img-top" alt="Full Stack Course">
+                <div class="overlay-text">View</div>
+                <div class="card-body text-center text-dark">
+                  <h5 class="card-title">Full Stack Course</h5>
+                  <p class="card-text">Zuitt - July 2025</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          
+          <!-- Certificate Card 2 -->
+          <div class="col-6 col-sm-6 col-lg-3 mb-4 d-flex justify-content-center">
+            <a href="#" class="card-link" data-bs-toggle="modal" data-bs-target="#universalModal" data-image-src="./images/img4.png">
+              <div class="card position-relative js-float-card">
+                <img src="./images/img4.png" class="card-img-top" alt="Backend Course">
+                <div class="overlay-text">View</div>
+                <div class="card-body text-center text-dark">
+                  <h5 class="card-title">Backend Course</h5>
+                  <p class="card-text">Zuitt - May 2025</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          
+          <!-- Certificate Card 3 -->
+          <div class="col-6 col-sm-6 col-lg-3 mb-4 d-flex justify-content-center">
+            <a href="#" class="card-link" data-bs-toggle="modal" data-bs-target="#universalModal" data-image-src="./images/img5.png">
+              <div class="card position-relative js-float-card">
+                <img src="./images/img5.png" class="card-img-top" alt="Frontend Course">
+                <div class="overlay-text">View</div>
+                <div class="card-body text-center text-dark">
+                  <h5 class="card-title">Frontend Course</h5>
+                  <p class="card-text">Zuitt - April 2025</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          
+          <!-- Certificate Card 4 -->
+          <div class="col-6 col-sm-6 col-lg-3 mb-4 d-flex justify-content-center">
+            <a href="#" class="card-link" data-bs-toggle="modal" data-bs-target="#universalModal" data-image-src="./images/img6.png">
+              <div class="card position-relative js-float-card">
+                <img src="./images/img6.png" class="card-img-top" alt="MySQL Course">
+                <div class="overlay-text">View</div>
+                <div class="card-body text-center text-dark">
+                  <h5 class="card-title">MySQL Course</h5>
+                  <p class="card-text">Zuitt - Aug. 2025</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          
+        </div>
+      </div>
+      <!-- Full Stack Certificate Set 1 End -->
+
+      <!-- Full Stack Certificate Set 2 Start -->
+      <div class="container">
+        <div class="row justify-content-center">
+          
+          <!-- Certificate Card 5 -->
+          <div class="col-6 col-sm-6 col-lg-3 mb-4 d-flex justify-content-center">
+            <a href="#" class="card-link" data-bs-toggle="modal" data-bs-target="#universalModal" data-image-src="./images/img7.png">
+              <div class="card position-relative js-float-card">
+                <img src="./images/img7.png" class="card-img-top" alt="Java Course">
+                <div class="overlay-text">View</div>
+                <div class="card-body text-center text-dark">
+                  <h5 class="card-title">Java Course</h5>
+                  <p class="card-text">Zuitt - Sept. 2025</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          
+          <!-- Certificate Card 6 -->
+          <div class="col-6 col-sm-6 col-lg-3 mb-4 d-flex justify-content-center">
+            <a href="#" class="card-link" data-bs-toggle="modal" data-bs-target="#universalModal" data-image-src="./images/img8.png">
+              <div class="card position-relative js-float-card">
+                <img src="./images/img8.png" class="card-img-top" alt="Springboot Course">
+                <div class="overlay-text">View</div>
+                <div class="card-body text-center text-dark">
+                  <h5 class="card-title">Springboot Course</h5>
+                  <p class="card-text">Zuitt - Sept. 2025</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          
+          <!-- Certificate Card 7 -->
+          <div class="col-6 col-sm-6 col-lg-3 mb-4 d-flex justify-content-center">
+            <a href="#" class="card-link" data-bs-toggle="modal" data-bs-target="#universalModal" data-image-src="./images/img9.png">
+              <div class="card position-relative js-float-card">
+                <img src="./images/img9.png" class="card-img-top" alt="Python Course">
+                <div class="overlay-text">View</div>
+                <div class="card-body text-center text-dark">
+                  <h5 class="card-title">Python Course</h5>
+                  <p class="card-text">Zuitt - Sept. 2025</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          
+          <!-- Certificate Card 8 -->
+          <div class="col-6 col-sm-6 col-lg-3 mb-4 d-flex justify-content-center">
+            <a href="#" class="card-link" data-bs-toggle="modal" data-bs-target="#universalModal" data-image-src="./images/img10.png">
+              <div class="card position-relative js-float-card">
+                <img src="./images/img10.png" class="card-img-top" alt="Django Course">
+                <div class="overlay-text">View</div>
+                <div class="card-body text-center text-dark">
+                  <h5 class="card-title">Django Course</h5>
+                  <p class="card-text">Sept - Aug. 2025</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          
+        </div>
+      </div>
+      <!-- Full Stack Certificate Set 2 End -->
+
+      <!-- Full Stack Certificate Set 3 Start -->
+      <div class="container">
+        <div class="row justify-content-center">
+          <h3 class="pt-5">Amazon Web Services and Testing</h3>
+          <!-- Certificate Card 9 -->
+          <div class="col-6 col-sm-6 col-lg-3 mb-4 d-flex justify-content-center">
+            <a href="#" class="card-link" data-bs-toggle="modal" data-bs-target="#universalModal" data-image-src="./images/img11.png">
+              <div class="card position-relative js-float-card">
+                <img src="./images/img11.png" class="card-img-top" alt="AWS Fundamentals">
+                <div class="overlay-text">View</div>
+                <div class="card-body text-center text-dark">
+                  <h5 class="card-title">AWS Fundamentals</h5>
+                  <p class="card-text">Zuitt - Aug. 2025</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          
+          <!-- Certificate Card 10 -->
+          <div class="col-6 col-sm-6 col-lg-3 mb-4 d-flex justify-content-center">
+            <a href="#" class="card-link" data-bs-toggle="modal" data-bs-target="#universalModal" data-image-src="./images/img12.png">
+              <div class="card position-relative js-float-card">
+                <img src="./images/img12.png" class="card-img-top" alt="AWS Serverless Deployment">
+                <div class="overlay-text">View</div>
+                <div class="card-body text-center text-dark">
+                  <h5 class="card-title">AWS Serverless Deployment</h5>
+                  <p class="card-text">Zuitt - Aug. 2025</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          
+          <!-- Certificate Card 11 -->
+          <div class="col-6 col-sm-6 col-lg-3 mb-4 d-flex justify-content-center">
+            <a href="#" class="card-link" data-bs-toggle="modal" data-bs-target="#universalModal" data-image-src="./images/img13.png">
+              <div class="card position-relative js-float-card">
+                <img src="./images/img13.png" class="card-img-top" alt="AWS Managed Services">
+                <div class="overlay-text">View</div>
+                <div class="card-body text-center text-dark">
+                  <h5 class="card-title">AWS Managed Services</h5>
+                  <p class="card-text">Zuitt - Aug. 2025</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          
+          <!-- Certificate Card 12 -->
+          <div class="col-6 col-sm-6 col-lg-3 mb-4 d-flex justify-content-center">
+            <a href="#" class="card-link" data-bs-toggle="modal" data-bs-target="#universalModal" data-image-src="./images/img14.png">
+              <div class="card position-relative js-float-card">
+                <img src="./images/img14.png" class="card-img-top" alt="Unit Testing">
+                <div class="overlay-text">View</div>
+                <div class="card-body text-center text-dark">
+                  <h5 class="card-title">Unit Testing</h5>
+                  <p class="card-text">Zuitt - Oct. 2025</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          
+        </div>
+      </div>
+      <!-- Full Stack Certificate Set 3 End -->
+      <!-- Full Stack Certificates End -->
+
+      <!-- Other Certificates Start -->
+      <!-- Other Certificate Set 1 Start -->
+      <div class="container">
+        <div class="row justify-content-center">
+          <h3 class="pt-5">Other Certificates</h3>
+
+          <!-- Certificate Card 13 -->
+          <div class="col-6 col-sm-6 col-lg-3 mb-4 d-flex justify-content-center">
+            <a href="#" class="card-link" data-bs-toggle="modal" data-bs-target="#universalModal" data-image-src="./images/img15.png">
+              <div class="card position-relative js-float-card">
+                <img src="./images/img15.png" class="card-img-top" alt="ITIL Foundation Workshop">
+                <div class="overlay-text">View</div>
+                <div class="card-body text-center text-dark">
+                  <h5 class="card-title">ITIL Foundation Workshop</h5>
+                  <p class="card-text">EduPro - May 2016</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          
+          <!-- Certificate Card 14 -->
+          <div class="col-6 col-sm-6 col-lg-3 mb-4 d-flex justify-content-center">
+            <a href="#" class="card-link" data-bs-toggle="modal" data-bs-target="#universalModal" data-image-src="./images/img16.png">
+              <div class="card position-relative js-float-card">
+                <img src="./images/img16.png" class="card-img-top" alt="ITIL Completion">
+                <div class="overlay-text">View</div>
+                <div class="card-body text-center text-dark">
+                  <h5 class="card-title">ITIL Completion</h5>
+                  <p class="card-text">AXELOS - June 2025</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          
+          <!-- Certificate Card 15 -->
+          <div class="col-6 col-sm-6 col-lg-3 mb-4 d-flex justify-content-center">
+            <a href="#" class="card-link" data-bs-toggle="modal" data-bs-target="#universalModal" data-image-src="./images/img17.png">
+              <div class="card position-relative js-float-card">
+                <img src="./images/img17.png" class="card-img-top" alt="SAP-ERP">
+                <div class="overlay-text">View</div>
+                <div class="card-body text-center text-dark">
+                  <h5 class="card-title">SAP-ERP</h5>
+                  <p class="card-text">IETI - May 2011</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          
+        </div>
+      </div>
+      <!-- Other Certificate Set 1 End -->
+
+      <!-- Other Certificate Set 2 Start -->
+      <div class="container">
+        <div class="row justify-content-center">
+
+          <!-- Certificate Card 16 -->
+          <div class="col-6 col-sm-6 col-lg-3 mb-4 d-flex justify-content-center">
+            <a href="#" class="card-link" data-bs-toggle="modal" data-bs-target="#universalModal" data-image-src="./images/img18.png">
+              <div class="card position-relative js-float-card">
+                <img src="./images/img18.png" class="card-img-top" alt="Intermediate Excel">
+                <div class="overlay-text">View</div>
+                <div class="card-body text-center text-dark">
+                  <h5 class="card-title">Intermediate Excel</h5>
+                  <p class="card-text">Insights - April 2021</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          
+          <!-- Certificate Card 17 -->
+          <div class="col-6 col-sm-6 col-lg-3 mb-4 d-flex justify-content-center">
+            <a href="#" class="card-link" data-bs-toggle="modal" data-bs-target="#universalModal" data-image-src="./images/img19.png">
+              <div class="card position-relative js-float-card">
+                <img src="./images/img19.png" class="card-img-top" alt="Advanced Excel">
+                <div class="overlay-text">View</div>
+                <div class="card-body text-center text-dark">
+                  <h5 class="card-title">Advanced Excel</h5>
+                  <p class="card-text">Insights - May 2021</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          
+          <!-- Certificate Card 18 -->
+          <div class="col-6 col-sm-6 col-lg-3 mb-4 d-flex justify-content-center">
+            <a href="#" class="card-link" data-bs-toggle="modal" data-bs-target="#universalModal" data-image-src="./images/img20.png">
+              <div class="card position-relative js-float-card">
+                <img src="./images/img20.png" class="card-img-top" alt="Excel for Data Analysis">
+                <div class="overlay-text">View</div>
+                <div class="card-body text-center text-dark">
+                  <h5 class="card-title">Excel for Data Analysis</h5>
+                  <p class="card-text">Insights - Aug. 2021</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          
+        </div>
+      </div>
+      <!-- Other Certificate Set 2 End -->
+
+      <!-- Other Certificate Set 3 Start -->
+      <div class="container">
+        <div class="row justify-content-center">
+
+          <!-- Certificate Card 19 -->
+          <div class="col-6 col-sm-6 col-lg-3 mb-4 d-flex justify-content-center">
+            <a href="#" class="card-link" data-bs-toggle="modal" data-bs-target="#universalModal" data-image-src="./images/img21.png">
+              <div class="card position-relative js-float-card">
+                <img src="./images/img21.png" class="card-img-top" alt="CCNA 1">
+                <div class="overlay-text">View</div>
+                <div class="card-body text-center text-dark">
+                  <h5 class="card-title">CCNA 1</h5>
+                  <p class="card-text">IETI - May 2011</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          
+          <!-- Certificate Card 20 -->
+          <div class="col-6 col-sm-6 col-lg-3 mb-4 d-flex justify-content-center">
+            <a href="#" class="card-link" data-bs-toggle="modal" data-bs-target="#universalModal" data-image-src="./images/img22.png">
+              <div class="card position-relative js-float-card">
+                <img src="./images/img22.png" class="card-img-top" alt="CCNA 2">
+                <div class="overlay-text">View</div>
+                <div class="card-body text-center text-dark">
+                  <h5 class="card-title">CCNA 2</h5>
+                  <p class="card-text">IETI - May 2011</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          
+          <!-- Certificate Card 21 -->
+          <div class="col-6 col-sm-6 col-lg-3 mb-4 d-flex justify-content-center">
+            <a href="#" class="card-link" data-bs-toggle="modal" data-bs-target="#universalModal" data-image-src="./images/img23.png">
+              <div class="card position-relative js-float-card">
+                <img src="./images/img23.png" class="card-img-top" alt="CCNA 3">
+                <div class="overlay-text">View</div>
+                <div class="card-body text-center text-dark">
+                  <h5 class="card-title">CCNA 3</h5>
+                  <p class="card-text">IETI - May 2011</p>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Certificate Card 22 -->
+          <div class="col-6 col-sm-6 col-lg-3 mb-4 d-flex justify-content-center">
+            <a href="#" class="card-link" data-bs-toggle="modal" data-bs-target="#universalModal" data-image-src="./images/img24.png">
+              <div class="card position-relative js-float-card">
+                <img src="./images/img24.png" class="card-img-top" alt="CCNA 4">
+                <div class="overlay-text">View</div>
+                <div class="card-body text-center text-dark">
+                  <h5 class="card-title">CCNA 4</h5>
+                  <p class="card-text">IETI - May 2011</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          
+        </div>
+      </div>
+      <!-- Other Certificate Set 3 End -->
+
+      <!-- Other Certificates End -->
+
+    <!-- Certifications Cards End -->
+    </section>
+
+    <!-- Certifications End -->
+
+    <!-- Tools Section Start -->
+    <section class="container-fluid above_about text-white" id="tools">
+      <div class="row">
+        <!-- Text Content -->
+        <div class="col-12 col-xl-5 text-center">
+          <div class="tools-content px-5">
+            <h2 class="text-center pb-3">Tools & Technologies</h2>
+            <p class="fs-4 justify-text about_me_indent">You can count on me to learn what's needed for the job, whether it's a tool I already know or a stack I've yet to explore.</p>
+            <p class="fs-4 justify-text about_me_indent">My focus is always on adapting quickly and applying what I learn in a way that supports the team and the company's goals.</p>
+          </div>
+        </div>
+        
+        <!-- Tech Stacks Component -->
+        <div class="col-12 col-xl-7">
+          <div class="row text-center">
+            <div id="tech-stacks">
+              <div class="ts-container">
+                <div class="ts-tabs"></div>
+                <div class="ts-content-wrapper">
+                  <div class="ts-stack-grid"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Tools Section End -->
+
+
+    <!-- Projects Section Start -->
+    <section class="container-fluid above_about text-center text-white" id="projects">
+      <!-- Projects Intro Start -->
+      <div class="projects-intro">
+        <h2 class="proj-intro-element">Projects</h2>
+        <h3 class="proj-intro-element">My projects are where ideas meet execution.</h3>
+        <h3 class="proj-intro-element">Blending creativity with technology to bring concepts to life.</h3>
+      </div>
+      <!-- Projects Intro End -->
+
+      <!-- Projects Cards Start -->
+      <div class="container-fluid">
+        <div class="container-fluid">
+          <!-- Project Row 1 -->
+          <div class="row justify-content-center proj-row py-2" data-row="1">
+            <!-- Project 1 -->
+            <div class="col-6 col-md-2 mb-4 d-flex justify-content-center proj-card">
+              <a href="#" class="card-link proj-modal-trigger" 
+                 data-bs-toggle="modal" 
+                 data-bs-target="#projectModal"
+                 data-title="ByteZaar"
+                 data-description="An e-commerce platform with user authentication, product catalog, shopping cart, and checkout processing. Built with React for the frontend and hosted through Vercel while Node.js for the backend with MongoDB database and hosted using AWS Lambda."
+                 data-image="./images/project1.png"
+                 data-stacks='["React", "Node.js", "MongoDB", "Express", "HTML", "Bootstrap", "CSS", "GitHub", "Postman", "Vercel", "AWS Lambda"]'
+                 data-github="https://github.com/rsaldonido/csp3-hosting-saldonido-tolentino"
+                 data-live="https://csp3-hosting-saldonido-tolentino.vercel.app/">
+                <div class="card position-relative js-float-card">
+                  <img src="./images/project1.png" class="card-img-top" alt="E-Commerce Platform">
+                  <div class="overlay-text">View Project</div>
+                  <div class="card-body text-center text-dark">
+                    <h5 class="card-title">ByteZaar</h5>
+                    <p class="card-text">E-Commerce Platform</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+
+            <!-- Project 2 -->
+            <div class="col-6 col-md-2 mb-4 d-flex justify-content-center proj-card">
+              <a href="#" class="card-link proj-modal-trigger" 
+                 data-bs-toggle="modal" 
+                 data-bs-target="#projectModal"
+                 data-title="Blogsicle"
+                 data-description="A full-stack blog platform supporting live editing, user authentication, and dynamic community engagement. Built with React for the frontend and hosted through Vercel while Node.js for the backend with MongoDB database and hosted using Render."
+                 data-image="./images/project2.png"
+                 data-stacks='["React", "Node.js", "MongoDB", "Express", "HTML", "Bootstrap", "CSS", "GitHub", "Postman", "Vercel", "Render"]'
+                 data-github="https://github.com/rsaldonido/blogApp"
+                 data-live="https://saldonido-blog-app.vercel.app/">
+                <div class="card position-relative js-float-card">
+                  <img src="./images/project2.png" class="card-img-top" alt="Blog Platform">
+                  <div class="overlay-text">View Project</div>
+                  <div class="card-body text-center text-dark">
+                    <h5 class="card-title">Blogsicle</h5>
+                    <p class="card-text">Blog Platform</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="col-12 col-md-2 mb-4 d-flex justify-content-center proj-card">
+              <a href="#" class="card-link proj-modal-trigger" 
+                 data-bs-toggle="modal" 
+                 data-bs-target="#projectModal"
+                 data-title="FlickLore"
+                 data-description="Full-stack movie catalog app with movie submission, comment management, and secure authentication. Built with React for the frontend and hosted through Vercel while Node.js for the backend with MongoDB database and hosted using Render."
+                 data-image="./images/project3.png"
+                 data-stacks='["React", "Node.js", "MongoDB", "Express", "HTML", "Bootstrap", "CSS", "GitHub", "Postman", "Vercel", "Render"]'
+                 data-github="https://github.com/rsaldonido/movieAppClient"
+                 data-live="https://saldonido-movie-app-client.vercel.app/">
+                <div class="card position-relative js-float-card">
+                  <img src="./images/project3.png" class="card-img-top" alt="Movie Catalog Platform">
+                  <div class="overlay-text">View Project</div>
+                  <div class="card-body text-center text-dark">
+                    <h5 class="card-title">FlickLore</h5>
+                    <p class="card-text">Movie Catalog Platform</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Project Row 2 -->
+          <div class="row justify-content-center proj-row py-2" data-row="2">
+            <!-- Project 4 -->
+            <div class="col-6 col-md-2 mb-4 d-flex justify-content-center proj-card">
+              <a href="#" class="card-link proj-modal-trigger" 
+                 data-bs-toggle="modal" 
+                 data-bs-target="#projectModal"
+                 data-title="Solo Training"
+                 data-description="Full-stack movie catalog app with movie submission, comment management, and secure authentication. Built with React for the frontend and hosted through Vercel while Node.js for the backend with MongoDB database and hosted using Render."
+                 data-image="./images/project4.png"
+                 data-stacks='["React", "Node.js", "MongoDB", "Express", "HTML", "Bootstrap", "CSS", "GitHub", "Postman", "Vercel", "Render"]'
+                 data-github="https://github.com/rsaldonido/FitnessTrackerApp"
+                 data-live="https://saldonido-fitness-tracker-app.vercel.app/">
+                <div class="card position-relative js-float-card">
+                  <img src="./images/project4.png" class="card-img-top" alt="Fitness Tracker Platform">
+                  <div class="overlay-text">View Project</div>
+                  <div class="card-body text-center text-dark">
+                    <h5 class="card-title">Solo Training</h5>
+                    <p class="card-text">Fitness Tracker Platform</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <!-- Project 5 -->
+            <div class="col-6 col-md-2 mb-4 d-flex justify-content-center proj-card">
+              <a href="#" class="card-link proj-modal-trigger" 
+                 data-bs-toggle="modal" 
+                 data-bs-target="#projectModal"
+                 data-title="Personal Portfolio Website"
+                 data-description="A responsive, mobile-first, single-page portfolio website built to showcase my skills and projects. It features a dynamic tech stack selector, smooth scroll-triggered animations, and interactive project modals, all designed and coded from the ground up to demonstrate modern front-end development practices."
+                 data-image="./images/project5.png"
+                 data-stacks='["HTML", "Bootstrap", "CSS", "JavaScript", "GitHub"]'
+                 data-github="https://github.com/rsaldonido/portfolio"
+                 data-live="https://rsaldonido.github.io/portfolio/">
+                <div class="card position-relative js-float-card">
+                  <img src="./images/project5.png" class="card-img-top" alt="Task Management App">
+                  <div class="overlay-text">View Project</div>
+                  <div class="card-body text-center text-dark">
+                    <h5 class="card-title">Personal Portfolio Website</h5>
+                    <p class="card-text">Online Portfolio</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Projects Cards End -->
+    </section>
+    <!-- Projects Section End -->
+
+    <!-- Contact/Footer Section Start -->
+    <section class="container-fluid above_about text-white" id="contact">
+
+        
+        <!-- Footer Section -->
+        <div class="row mt-5 pt-4 border-top border-secondary">
+          <div class="col-12 text-center">
+            <p class="mb-2">© 2025 Randolf "Ram" Saldonido. All Rights Reserved.</p>
+            <p class="text-muted small">Designed and built with ❤️</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Contact/Footer Section End -->
+
+
+
+
+    <!-- Modal for Image Viewing -->
+    <div class="modal fade" id="universalModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content bg-transparent border-0 position-relative">
+          <button type="button" 
+                  class="btn-close btn-close-white position-absolute top-0 end-0 m-3" 
+                  data-bs-dismiss="modal" aria-label="Close"
+                  style="z-index: 1056;"></button>
+          <div class="modal-body text-center">
+            <img id="modalImage" 
+                 class="img-fluid w-75" 
+                 style="max-height:90vh; object-fit:contain;" 
+                 alt="Image Preview">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project Modal -->
+    <div class="modal fade" id="projectModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-content bg-dark text-white">
+          <button type="button" 
+                  class="btn-close btn-close-white position-absolute top-0 end-0 m-3" 
+                  data-bs-dismiss="modal" aria-label="Close"
+                  style="z-index: 1056;"></button>
+          <div class="modal-body p-4">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-6">
+                  <img id="projectModalImage" 
+                      class="img-fluid rounded" 
+                      style="max-height:70vh; object-fit:contain;" 
+                      alt="Project Image">
+                </div>
+                <div class="col-md-6">
+                  <h2 id="projectModalTitle" class="mb-3"></h2>
+                  <p id="projectModalDescription" class="mb-4"></p>
+                  
+                  <h5 class="mb-3">Technologies Used</h5>
+                  <div id="projectModalStacks" class="d-flex flex-wrap gap-2 mb-4"></div>
+                  
+                  <div class="d-flex gap-3">
+                    <a id="projectModalGithub" href="#" target="_blank" class="btn btn-outline-light">
+                      <i class="fab fa-github"></i> Github Repo
+                    </a>
+                    <a id="projectModalLive" href="#" target="_blank" class="btn btn-primary">
+                      <i class="fas fa-external-link-alt"></i> Live Demo
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Custom Script -->
+    <script src="./script.js"></script>
+  </body>
+</html>
+
+
+
