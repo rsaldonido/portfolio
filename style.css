@@ -264,7 +264,7 @@ h1, h2, h3, h4, h5, h6,
 }
 
 #myPic {
-  border-radius: 84% 16% 89% 11% / 26% 74% 26% 74% ;
+  border-radius: 74% 26% 79% 21% / 23% 73% 27% 77%  ;
   padding: 5px; /* space for the neon ring */
   background: linear-gradient(to left, #360033, #0b8793); /* gradient border */
   display: inline-block;
