@@ -1,4 +1,4 @@
-// ===== MOBILE MENU FUNCTIONALITY =====
+// Mobile Menu Function Start
 const menuBtn = document.getElementById("menu_btn");
 const mobileMenu = document.getElementById("mobile_menu");
 const navLinks = document.querySelectorAll(".mobile_menu .nav-link");
@@ -31,8 +31,14 @@ navLinks.forEach(link => {
 });
 
 overlay.addEventListener("click", closeMenu);
+// Mobile Menu Function End
 
-// ===== ROLE TRANSITION FUNCTIONALITY =====
+
+
+
+
+// Role Transition Functionality Start
+// NOTE: Connected to "About Me Section to Certifcate Section Animations" section of the CSS file
 const role1 = document.getElementById("role1");
 const role2 = document.getElementById("role2");
 const role3 = document.getElementById("role3");
@@ -102,8 +108,13 @@ window.addEventListener("scroll", () => {
     setActiveRole(3, "down");
   }
 });
+// Role Transition Functionality End
 
-// ===== CARD HOVER FUNCTIONALITY =====
+
+
+
+
+// Card Hover Functionality Start
 function initCardHover() {
   const cards = document.querySelectorAll('.js-float-card');
   if (!cards.length) return setTimeout(initCardHover, 500);
@@ -136,8 +147,13 @@ function initCardHover() {
     });
   });
 }
+// Card Hover Functionality End
 
-// ===== MODAL FUNCTIONALITY =====
+
+
+
+
+// Modal Functionality Start
 function initUniversalModal() {
   const universalModal = document.getElementById('universalModal');
   const modalImage = document.getElementById('modalImage');
@@ -153,16 +169,24 @@ function initUniversalModal() {
     modalImage.alt = imageAlt;
   });
 }
+// Modal Functionality End
 
-// ===== TOOLTIP INITIALIZATION =====
+
+
+
+// Tooltip Functionality Start
 function initTooltips() {
   const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
   const tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
     return new bootstrap.Tooltip(tooltipTriggerEl);
   });
 }
+// Tooltip Functionality End
 
-// ===== ABOUT ME FADE FUNCTIONALITY =====
+
+
+
+// About Me Section Fade Animation Start
 function initAboutMeFade() {
   const aboutMeSection = document.getElementById('about_me');
   const certificationsSection = document.getElementById('certifications');
@@ -202,8 +226,13 @@ function initAboutMeFade() {
   window.addEventListener('scroll', optimizedScrollHandler);
   window.addEventListener('resize', optimizedScrollHandler);
 }
+// About Me Section Fade Animation End
 
-// ===== CERTIFICATIONS ANIMATIONS =====
+
+
+
+
+// Certifications Animation Functionality Start
 function initCertificationsAnimations() {
   const certSection = document.getElementById('certifications');
   const introElements = document.querySelectorAll('.cert-intro-element');
@@ -385,11 +414,14 @@ function initCertificationsAnimations() {
   window.addEventListener('scroll', handleCertificationsAnimations);
   setTimeout(handleCertificationsAnimations, 100);
 }
+// Certifications Animation Functionality End
 
 
 
 
-// ===== TECH STACKS FUNCTIONALITY =====
+
+
+// Tech Stacks Section Start
 function initTechStacks() {
   const categories = {
     All: [],
@@ -464,10 +496,9 @@ function initTechStacks() {
   `;
   contentWrapper.appendChild(paginationContainer);
 
-  // Current state - CHANGED FROM 10 TO 10 (keeping 10 but fixing the grid layout)
   let currentCategory = 'All';
   let currentPage = 1;
-  const itemsPerPage = 10; // This should now display 5 per row (2 rows)
+  const itemsPerPage = 10;
 
   // Create tabs
   Object.keys(categories).forEach((cat, idx) => {
@@ -481,7 +512,6 @@ function initTechStacks() {
   function setWrapperHeight(extra = 32) {
     const gridHeight = grid.scrollHeight;
     const paginationHeight = paginationContainer.scrollHeight;
-    // Set explicit height with smooth transition
     contentWrapper.style.height = (gridHeight + paginationHeight + extra) + 'px';
   }
 
@@ -577,7 +607,7 @@ function initTechStacks() {
     }
   });
 
-  // Update the grid layout to show 5 items per row
+  // Grid layout to show 5 items per row
   function updateGridLayout() {
     // Force 5 columns layout for desktop
     if (window.innerWidth >= 768) {
@@ -602,6 +632,7 @@ function initTechStacks() {
     setWrapperHeight();
   });
 }
+// Tech Stacks Section End
 
 
 
@@ -609,8 +640,7 @@ function initTechStacks() {
 
 
 
-
-// ===== PROJECTS ANIMATIONS FUNCTIONALITY =====
+// Projects Section Animation Functionality Start
 function initProjectsAnimations() {
   const projSection = document.getElementById('projects');
   if (!projSection) return;
@@ -795,7 +825,8 @@ function initProjectsAnimations() {
   setTimeout(handleProjectsAnimations, 100);
 }
 
-// ===== PROJECT MODAL FUNCTIONALITY =====
+
+// Project Card Modal Functionality Start
 function initProjectModal() {
   const projectModal = document.getElementById('projectModal');
   
@@ -883,28 +914,15 @@ function getLogoForStack(stack) {
   
   return logos[stack] || 'https://via.placeholder.com/40';
 }
+// Project Card Modal Functionality End
+// Projects Section Animation Functionality End
 
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// ===== MAIN INITIALIZATION =====
+// Initializer for Functions
 function initializeAll() {
   const initializers = [
     initCardHover,

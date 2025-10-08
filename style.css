@@ -1,4 +1,4 @@
-/* ===== BASE STYLES ===== */
+/* Base Styling Start  */
 html, body {
   max-width: 100%;
   overflow-x: hidden;
@@ -14,8 +14,10 @@ body {
   font-family: sans-serif;
   overflow-x: hidden;
 }
+/* Base Styling End  */
 
-/* ===== UTILITY CLASSES ===== */
+/* Utility Classes Start */
+
 .spacer {
   height: 1000px;
 }
@@ -30,13 +32,28 @@ body {
 
 .center-content {
   display: flex;
-  flex-direction: column;    /* stack children vertically */
-  justify-content: center;   /* center vertically */
-  align-items: center;       /* center horizontally */
-  text-align: center;        /* keeps text centered inside */
+  flex-direction: column;    
+  justify-content: center;  
+  align-items: center;      
+  text-align: center;
 }
 
-/* ===== TEXT STYLING ===== */
+.above_about {
+  position: relative;
+  z-index: 1;
+}
+
+.behind_about {
+  position: relative;
+  z-index: -1;
+}
+
+/* Utility Classes End */
+
+
+
+
+/* Text Styling Start (Pending to change the font family since I need to prio the layout first so I could decide the font fam later) */
 .text_size {
   font-size: 16px;
 }
@@ -52,8 +69,12 @@ body {
 .icon_size {
   width: 1.3rem;
 }
+/* Text Styling End */
 
-/* ===== SECTION BACKGROUNDS ===== */
+
+
+
+/* Background Designs Start */
 .bg_design_one {
   background: linear-gradient(to left, #360033, #0b8793);
 }
@@ -81,8 +102,12 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
+/* Background Designs End */
 
-/* ===== NAVBAR STYLING ===== */
+
+
+
+/* Navbar Styling Start */
 #nav {
   z-index: 10;
   overflow: hidden;
@@ -99,7 +124,7 @@ body {
   z-index: 3;
 }
 
-/* ===== HAMBURGER STYLING ===== */
+/* Hamburger Styling Start */
 .navbar-toggler:focus {
   box-shadow: none;
 }
@@ -153,8 +178,9 @@ body {
   transform: rotate(-45deg);
   top: 0;
 }
+/* Hamburger Styling End */
 
-/* ===== MOBILE MENU STYLING ===== */
+/* Mobile Menu Styling Start */
 .mobile_menu {
   position: fixed;
   top: 70px;
@@ -188,7 +214,7 @@ body {
   color: #ffd700;
 }
 
-/* ===== OVERLAY STYLING ===== */
+/* Overlay Styling Start */
 .overlay {
   position: fixed;
   top: 0;
@@ -211,8 +237,14 @@ body {
   opacity: 0;
   visibility: visible;
 }
+/* Overlay Styling End */
+/* Mobile Menu Styling End */
+/* Navbar Styling End */
 
-/* ===== ABOUT ME STYLING ===== */
+
+
+
+/* About Me Section Styling Start */
 #about_me {
   position: fixed;
   width: 100%;
@@ -230,12 +262,12 @@ body {
     0 0 10px #00ffff,
     0 0 20px #00ffff,
     0 0 30px #00ffff,
-    0 0 40px #00bbbb; /* bright cyan glow matching social icons */
-  animation: glowPulse 1s ease-in-out infinite alternate;
+    0 0 40px #00bbbb;
+  animation: glowPulse 2s ease-in-out infinite alternate;
   filter: brightness(1.1);
 }
 
-/* Enhanced glow pulse animation matching social icons */
+/* MyPic Glow Pulse Animation */
 @keyframes glowPulse {
   from {
     box-shadow: 
@@ -250,7 +282,7 @@ body {
       0 0 30px #00ffff,
       0 0 45px #00ffff,
       0 0 60px #00bbbb,
-      0 0 80px #0088ff; /* even brighter at peak */
+      0 0 80px #0088ff;
   }
 }
 
@@ -284,23 +316,18 @@ body {
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
+/* About Me Section Styling End */
 
-.above_about {
-  position: relative;
-  z-index: 1;
-}
 
-.behind_about {
-  position: relative;
-  z-index: -1;
-}
 
-/* ===== EDUCATION STYLING ===== */
+
+
+/* Educatation Section Styling Start */
 #ietiLogo {
   width: 35%;
 }
 
-/* ===== CARD STYLES ===== */
+/*Card Styling Start*/
 .card {
   background: linear-gradient(to right, #360033, #0b8793, #360033, #0b8793);
   background-size: 200% 100%;
@@ -393,8 +420,9 @@ body {
     transform: translateY(-12px) scale(1.02);
   }
 }
+/*Card Styling End*/
 
-/* ===== MODAL STYLES ===== */
+/* Modal Styling Start */
 body.modal-open {
   padding-right: 0 !important;
 }
@@ -431,8 +459,9 @@ body.modal-open {
     filter: none !important;
   }
 }
+/* Modal Styling End */
 
-/* ===== ANIMATIONS ===== */
+/* Entrance and Exit Animation Styling Start*/
 @keyframes fadeInFromLeft {
   from {
     opacity: 0;
@@ -469,8 +498,13 @@ body.modal-open {
   animation: fadeInFromRight .6s ease-out 0.3s forwards;
   opacity: 0;
 }
+/* Entrance and Exit Animation Styling End*/
+/* Educatation Section Styling End */
 
-/* ===== ROLE TRANSITION ANIMATIONS ===== */
+
+
+
+/* Role Transition Animation (role 1,2, and 3) Start */
 .role-section {
   position: relative;
   min-height: 200px;
@@ -506,8 +540,10 @@ body.modal-open {
   opacity: 1;
   transform: translateX(0);
 }
+/* Role Transition Animation (role 1,2, and 3) End */
 
-/* ===== ABOUT ME FADE ANIMATIONS ===== */
+
+/* About Me Section to Certifcate Section Animations Start */
 #about_me.fade-out .fade-in-left {
   animation: fadeOutToLeft 0.8s ease-out forwards;
 }
@@ -545,8 +581,16 @@ body.modal-open {
     transform: translateX(50px);
   }
 }
+/* About Me Section to Certifcate Section Animations End */
 
-/* ===== CERTIFICATIONS ANIMATIONS ===== */
+
+
+
+
+
+/* NOTE: The card styling of certificates is the same with the achievement cards in Education section while its section was styled using bootstrap and JS*/
+
+/* Certification Section Animation Start */
 .certifications-intro h2,
 .certifications-intro h3 {
   opacity: 0;
@@ -626,12 +670,14 @@ body.modal-open {
 .cert-card.initial-bottom {
   transform: translateY(100px);
 }
+/* Certification Section Animation End */
 
 
 
 
 
-/* ===== TOOLS SECTION STYLING ===== */
+
+/* Tool Section Styling Start */
 #tools {
   position: relative;
   z-index: 2;
@@ -676,7 +722,6 @@ body.modal-open {
 }
 
 
-/* ===== TOOLS SECTION TEXT CENTERING ===== */
 .tools-content {
     display: flex;
     flex-direction: column;
@@ -686,13 +731,13 @@ body.modal-open {
     text-align: center;
 }
 
-/* Ensure the text content container takes full height */
+
 #tools .col-12.col-lg-5 {
     display: flex;
     align-items: center;
 }
 
-/* Center align the paragraphs */
+
 .tools-content p {
     text-align: center;
     margin-left: auto;
@@ -837,7 +882,7 @@ body.modal-open {
   }
 }
 
-/* ===== TECH STACKS PAGINATION STYLING ===== */
+/* Tech Stacks Pagination Styling Start */
 #tech-stacks .ts-pagination {
   display: flex;
   justify-content: center;
@@ -897,7 +942,7 @@ body.modal-open {
   }
 }
 
-/* ================== TOOLS PAGINATION STICKY ================== */
+/* Making sure the pagination stays at the bottom */
 #ts-tools-wrapper {
   position: relative;
   padding-bottom: 3rem; /* reserve space for pagination */
@@ -909,7 +954,7 @@ body.modal-open {
   left: 0;
   width: 100%;
   padding: 0.5rem 1rem;
-  background: rgba(0, 0, 0, 0.4); /* translucent bar */
+  background: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(6px);
   display: flex;
   justify-content: space-between;
@@ -918,26 +963,166 @@ body.modal-open {
   z-index: 5;
 }
 
-/* Optional: prevents layout jump when switching pages */
+/* Prevents layout jump when switching pages */
 .ts-stack-container {
   min-height: 250px;
   transition: min-height 0.3s ease;
 }
 
 
-/* Add this to your existing CSS for smooth height transitions */
+/* Height change transition */
 #tech-stacks .ts-content-wrapper {
   overflow: hidden;
-  transition: height 0.5s ease !important; /* Force the transition */
-  will-change: height; /* Optimize for performance */
+  transition: height 0.5s ease !important;
+  will-change: height;
 }
 
-/* Ensure the content wrapper has proper initial styling */
 #tech-stacks .ts-content-wrapper {
   position: relative;
-  min-height: 200px; /* Minimum height to prevent jarring changes */
+  min-height: 200px; 
+}
+/* Tech Stacks Pagination Styling End */
+/* Tool Section Styling End */
+
+
+
+
+
+
+/* NOTE: The card styling of Projects is the same with the achievement cards in Education section while its section was styled using bootstrap and JS */
+
+/* Projects Section Animation and Styling Start */
+.projects-intro h2,
+.projects-intro h3 {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
+.proj-intro-element.animate-in {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.proj-intro-element.animate-out {
+  opacity: 0 !important;
+  transform: translateY(-30px) !important;
+}
+
+.proj-row {
+  opacity: 1;
+  transition: opacity 0.8s ease;
+}
+
+.proj-card {
+  opacity: 0;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Animation classes for project cards */
+.proj-card.animate-in-left {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+
+.proj-card.animate-out-right {
+  opacity: 0 !important;
+  transform: translateX(100px) !important;
+}
+
+.proj-card.animate-in-right {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+
+.proj-card.animate-out-left {
+  opacity: 0 !important;
+  transform: translateX(-100px) !important;
+}
+
+.proj-card.animate-in-bottom {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.proj-card.animate-out-top {
+  opacity: 0 !important;
+  transform: translateY(-100px) !important;
+}
+
+/* Initial states for different animations */
+.proj-card.initial-left {
+  transform: translateX(-100px);
+}
+
+.proj-card.initial-right {
+  transform: translateX(100px);
+}
+
+.proj-card.initial-bottom {
+  transform: translateY(100px);
+}
+
+/* Making sure that the project cards are visible when animated in */
+.proj-card.animate-in-left,
+.proj-card.animate-in-right,
+.proj-card.animate-in-bottom {
+  opacity: 1 !important;
+}
+
+/* Stack icons in modal */
+.stack-icon {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 5px;
+}
+
+/* Projects Section Background */
+#projects {
+  position: relative;
+  z-index: 2;
+  padding: 100px 0;
+  overflow: hidden;
+}
+
+#projects::before,
+#projects::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 20px;
+  pointer-events: none;
+  z-index: 3;
+}
+
+#projects::before {
+  top: 0;
+  background: linear-gradient(to bottom, 
+              rgba(58, 97, 134, 1) 0%, 
+              rgba(58, 97, 134, 0.8) 40%,
+              rgba(58, 97, 134, 0.4) 70%,
+              rgba(58, 97, 134, 0) 100%);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+
+#projects::after {
+  bottom: 0;
+  background: linear-gradient(to top, 
+              rgba(58, 97, 134, 1) 0%, 
+              rgba(58, 97, 134, 0.8) 40%,
+              rgba(58, 97, 134, 0.4) 70%,
+              rgba(58, 97, 134, 0) 100%);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+/* Projects Section Animation and Styling Start */
 
 
 
@@ -946,10 +1131,7 @@ body.modal-open {
 
 
 
-
-
-
-/* ===== RESPONSIVE MEDIA QUERIES ===== */
+/* Media Queries (Responsiveness) Start */
 @media (max-width: 576px) {
   #myPic, #gradPic {
     width: 25vh;
@@ -1050,6 +1232,7 @@ body.modal-open {
   }
 
 }
+/* Media Queries (Responsiveness) End */
 
 
 
@@ -1057,180 +1240,8 @@ body.modal-open {
 
 
 
-
-
-
-
-
-
-
-
-
-
-/* ===== PROJECTS ANIMATIONS ===== */
-.projects-intro h2,
-.projects-intro h3 {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.proj-intro-element.animate-in {
-  opacity: 1 !important;
-  transform: translateY(0) !important;
-}
-
-.proj-intro-element.animate-out {
-  opacity: 0 !important;
-  transform: translateY(-30px) !important;
-}
-
-.proj-row {
-  opacity: 1;
-  transition: opacity 0.8s ease;
-}
-
-.proj-card {
-  opacity: 0;
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-/* Animation classes for project cards */
-.proj-card.animate-in-left {
-  opacity: 1 !important;
-  transform: translateX(0) !important;
-}
-
-.proj-card.animate-out-right {
-  opacity: 0 !important;
-  transform: translateX(100px) !important;
-}
-
-.proj-card.animate-in-right {
-  opacity: 1 !important;
-  transform: translateX(0) !important;
-}
-
-.proj-card.animate-out-left {
-  opacity: 0 !important;
-  transform: translateX(-100px) !important;
-}
-
-.proj-card.animate-in-bottom {
-  opacity: 1 !important;
-  transform: translateY(0) !important;
-}
-
-.proj-card.animate-out-top {
-  opacity: 0 !important;
-  transform: translateY(-100px) !important;
-}
-
-/* Initial states for different animations */
-.proj-card.initial-left {
-  transform: translateX(-100px);
-}
-
-.proj-card.initial-right {
-  transform: translateX(100px);
-}
-
-.proj-card.initial-bottom {
-  transform: translateY(100px);
-}
-
-/* Make sure project cards are visible when animated in */
-.proj-card.animate-in-left,
-.proj-card.animate-in-right,
-.proj-card.animate-in-bottom {
-  opacity: 1 !important;
-}
-
-/* Stack icons in modal */
-.stack-icon {
-  width: 40px;
-  height: 40px;
-  object-fit: contain;
-  margin-right: 8px;
-  margin-bottom: 8px;
-  border-radius: 5px;
-  background: rgba(255, 255, 255, 0.1);
-  padding: 5px;
-}
-
-/* Projects Section Background */
-#projects {
-  position: relative;
-  z-index: 2;
-/*  background: #3a6186;
-  background: -webkit-linear-gradient(to right, #360033, #0b8793);
-  background: linear-gradient(to right, #360033, #0b8793);*/
-  padding: 100px 0;
-  overflow: hidden;
-}
-
-#projects::before,
-#projects::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  height: 20px;
-  pointer-events: none;
-  z-index: 3;
-}
-
-#projects::before {
-  top: 0;
-  background: linear-gradient(to bottom, 
-              rgba(58, 97, 134, 1) 0%, 
-              rgba(58, 97, 134, 0.8) 40%,
-              rgba(58, 97, 134, 0.4) 70%,
-              rgba(58, 97, 134, 0) 100%);
-  backdrop-filter: blur(3px);
-  -webkit-backdrop-filter: blur(3px);
-}
-
-#projects::after {
-  bottom: 0;
-  background: linear-gradient(to top, 
-              rgba(58, 97, 134, 1) 0%, 
-              rgba(58, 97, 134, 0.8) 40%,
-              rgba(58, 97, 134, 0.4) 70%,
-              rgba(58, 97, 134, 0) 100%);
-  backdrop-filter: blur(3px);
-  -webkit-backdrop-filter: blur(3px);
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* ===== CONTACT/FOOTER SECTION STYLING ===== */
+/* Contact and Footer Section Srtling Start */
+/*NOTE: WIP, just need to plan more of its content and styling*/
 #contact {
   position: relative;
   z-index: 2;
@@ -1373,3 +1384,4 @@ body.modal-open {
   transform: translateY(10px);
   animation: fadeInFromBottom 0.6s ease-out 0.6s forwards;
 }
+/* Contact and Footer Section Srtling End */
